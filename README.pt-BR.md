@@ -54,7 +54,7 @@ entrega o comando final pro `fish -lc`.
 ## Instalação
 
 ```bash
-git clone https://github.com/TabelaDev/TabelaQuickRun.git \
+git clone https://github.com/TabelaDev/tabelaquickrun.git \
     ~/.config/DankMaterialShell/plugins/quickRun
 dms ipc call plugin-scan scan
 dms ipc call plugins enable quickRun
