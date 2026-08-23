@@ -88,6 +88,10 @@ Digitar uma palavra filtra esse cache; selecionar uma sugestão ou apertar
 enter no comando literal roda `fish -lc "<comando>"` via
 `Quickshell.execDetached`.
 
+## Roadmap
+
+Veja [ROADMAP.md](ROADMAP.md) pros itens em aberto (submissão pro registry, screenshot, etc.).
+
 ## Licença
 
 [AGPL-3.0](LICENSE)

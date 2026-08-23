@@ -87,6 +87,10 @@ Typing a single word filters that cache; selecting a suggestion or pressing
 enter on the literal command runs `fish -lc "<command>"` via
 `Quickshell.execDetached`.
 
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md) for open items (registry submission, screenshot, etc.).
+
 ## License
 
 [AGPL-3.0](LICENSE)
