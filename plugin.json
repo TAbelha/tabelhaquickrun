@@ -1,0 +1,20 @@
+{
+    "id": "quickRun",
+    "name": "Quick Run",
+    "description": "Run a shell command from the launcher, with live matching against your fish functions and abbreviations",
+    "version": "1.0.0",
+    "author": "Ian Soares",
+    "icon": "terminal",
+    "type": "launcher",
+    "capabilities": ["command-execution"],
+    "component": "./QuickRunLauncher.qml",
+    "settings": "./QuickRunSettings.qml",
+    "trigger": ";",
+    "requires_dms": ">=1.4.0",
+    "requires": ["fish"],
+    "permissions": [
+        "settings_read",
+        "settings_write",
+        "process"
+    ]
+}
