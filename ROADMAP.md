@@ -9,7 +9,7 @@ Open items after the `v1.0.0` initial release.
   command runner (see README's "Why not just use a generic command runner?").
 - [ ] **Screenshot.** README has no screenshot/GIF of the launcher matching in
   action — add one (`screenshot.png`, matching the convention in sibling
-  Tabela repos).
+  TAbelha repos).
 - [ ] **Retire the old zenity fallback.** `~/.config/niri/scripts/quick-run.sh`
   (the pre-plugin zenity-based implementation) is left in place, unreferenced,
   as a rollback path. Once this plugin has proven itself for a while, delete

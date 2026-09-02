@@ -1,6 +1,6 @@
 <div align="center">
 
-# Tabela Quick Run
+# TAbelha Quick Run
 
 **English** · [Português](README.pt-BR.md)
 
@@ -53,7 +53,7 @@ is built the other way around: it asks fish itself (`functions -n`,
 ## Installation
 
 ```bash
-git clone https://github.com/TabelaDev/tabelaquickrun.git \
+git clone https://github.com/TAbelhaDev/tabelhaquickrun.git \
     ~/.config/DankMaterialShell/plugins/quickRun
 dms ipc call plugin-scan scan
 dms ipc call plugins enable quickRun

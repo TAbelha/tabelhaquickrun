@@ -1,6 +1,6 @@
 <div align="center">
 
-# Tabela Quick Run
+# TAbelha Quick Run
 
 [English](README.md) · **Português**
 
@@ -54,7 +54,7 @@ entrega o comando final pro `fish -lc`.
 ## Instalação
 
 ```bash
-git clone https://github.com/TabelaDev/tabelaquickrun.git \
+git clone https://github.com/TAbelhaDev/tabelhaquickrun.git \
     ~/.config/DankMaterialShell/plugins/quickRun
 dms ipc call plugin-scan scan
 dms ipc call plugins enable quickRun
