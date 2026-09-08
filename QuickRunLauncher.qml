@@ -14,6 +14,7 @@ Item {
 
     property var functionEntries: []
     property var abbrEntries: []
+    property var worktreeEntries: []
 
     signal itemsChanged
 
@@ -70,6 +71,29 @@ Item {
                 abbrEntries.push({
                     name: match[1],
                     expansion: expansion
+                });
+            }
+        }
+
+        onExited: () => root.itemsChanged()
+    }
+
+    Process {
+        id: worktreesProc
+        command: ["fish", "-lc", "hrwivwt --list"]
+        running: true
+
+        stdout: SplitParser {
+            onRead: data => {
+                const line = data.trim();
+                if (!line)
+                    return;
+                const tabIdx = line.indexOf("\t");
+                if (tabIdx === -1)
+                    return;
+                worktreeEntries.push({
+                    slug: line.substring(0, tabIdx),
+                    branch: line.substring(tabIdx + 1).trim()
                 });
             }
         }
@@ -144,6 +168,24 @@ Item {
                         icon: "material:bolt",
                         comment: "fish abbreviation → " + entry.expansion,
                         action: "run:" + entry.expansion,
+                        categories: ["Quick Run"]
+                    });
+            }
+
+            for (const entry of worktreeEntries) {
+                const slugScore = matchScore(entry.slug, firstWord);
+                const branchScore = matchScore(entry.branch, firstWord);
+                const score = slugScore >= 0 && branchScore >= 0 ? Math.min(slugScore, branchScore) : Math.max(slugScore, branchScore);
+                // reabrir sempre roda "hrwivwt <slug>", nunca o texto literal
+                // digitado (que pode ser só um fragmento da branch) — por
+                // isso não pula em match exato como as duas listas acima.
+                if (score >= 0)
+                    suggestions.push({
+                        score: score,
+                        name: entry.slug,
+                        icon: "material:call_split",
+                        comment: "worktree — " + entry.branch,
+                        action: "run:hrwivwt " + entry.slug,
                         categories: ["Quick Run"]
                     });
             }
