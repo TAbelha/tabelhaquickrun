@@ -80,7 +80,7 @@ Item {
 
     Process {
         id: worktreesProc
-        command: ["fish", "-lc", "hrwivwt --list"]
+        command: ["fish", "-lc", "hrwt --list"]
         running: true
 
         stdout: SplitParser {
@@ -176,7 +176,7 @@ Item {
                 const slugScore = matchScore(entry.slug, firstWord);
                 const branchScore = matchScore(entry.branch, firstWord);
                 const score = slugScore >= 0 && branchScore >= 0 ? Math.min(slugScore, branchScore) : Math.max(slugScore, branchScore);
-                // reabrir sempre roda "hrwivwt <slug>", nunca o texto literal
+                // reabrir sempre roda "hrwt <slug>", nunca o texto literal
                 // digitado (que pode ser só um fragmento da branch) — por
                 // isso não pula em match exato como as duas listas acima.
                 if (score >= 0)
@@ -185,7 +185,7 @@ Item {
                         name: entry.slug,
                         icon: "material:call_split",
                         comment: "worktree — " + entry.branch,
-                        action: "run:hrwivwt " + entry.slug,
+                        action: "run:hrwt " + entry.slug,
                         categories: ["Quick Run"]
                     });
             }
