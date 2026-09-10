@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- The literal "Run: <text>" entry now always sorts first, by marking it
+  `_preScored` so the launcher's own text-relevance scorer doesn't rank a
+  longer-matching suggestion above it.
+
 ## [1.0.0] - 2026-08-23
 
 ### Added

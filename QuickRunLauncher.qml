@@ -139,7 +139,11 @@ Item {
             icon: "material:terminal",
             comment: "Execute in a login fish shell",
             action: "run:" + text,
-            categories: ["Quick Run"]
+            categories: ["Quick Run"],
+            // Pins this to the top — the launcher's Scorer.js re-ranks by
+            // text relevance and ignores return order unless _preScored is
+            // set (see ItemTransformers.transformBuiltInLauncherItem).
+            _preScored: 999999
         }];
 
         const firstWord = text.split(/\s+/)[0];
